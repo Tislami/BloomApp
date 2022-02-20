@@ -12,10 +12,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.bloomapp.R
 
 @Composable
-fun WelcomeScreen(modifier: Modifier= Modifier) {
+fun WelcomeScreen(
+    navController: NavController,
+    modifier: Modifier= Modifier) {
 
     val welcomeBg = if (isSystemInDarkTheme()) {
         R.drawable.dark_welcome_bg;
@@ -76,7 +79,8 @@ fun WelcomeScreen(modifier: Modifier= Modifier) {
             )
 
             Button(
-                onClick = { /*TODO*/ },
+                onClick = {
+                    navController.navigate("login") },
                 modifier = modifier
                     .fillMaxWidth()
                     .padding(horizontal = 16.dp)
@@ -93,8 +97,11 @@ fun WelcomeScreen(modifier: Modifier= Modifier) {
                 )
             }
 
+            var state =
+
+
             TextButton(
-                onClick = { /*TODO*/ },
+                onClick = { navController.navigate("login")  },
                 modifier = modifier.padding(top = 16.dp),
             ) {
                 Text(

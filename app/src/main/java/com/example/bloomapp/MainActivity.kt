@@ -11,6 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.bloomapp.screen.login.LoginScreen
 import com.example.bloomapp.screen.welcome.WelcomeScreen
 import com.example.bloomapp.ui.theme.BloomAppTheme
 
@@ -21,7 +25,13 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             BloomAppTheme {
-                WelcomeScreen()
+                val navController = rememberNavController()
+
+
+                NavHost(navController = navController, startDestination = "welcome") {
+                    composable("welcome") { WelcomeScreen(navController = navController) }
+                    composable("login") { LoginScreen(navController = navController) }
+                }
             }
         }
     }
