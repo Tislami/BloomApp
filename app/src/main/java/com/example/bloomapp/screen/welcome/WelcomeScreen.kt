@@ -14,6 +14,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.bloomapp.R
+import com.example.bloomapp.components.BloomButton
 
 @Composable
 fun WelcomeScreen(
@@ -78,27 +79,11 @@ fun WelcomeScreen(
                 modifier = modifier.paddingFromBaseline(bottom = 40.dp, top = 32.dp)
             )
 
-            Button(
-                onClick = {
-                    navController.navigate("login") },
-                modifier = modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp)
-                    .height(48.dp),
-                shape = RoundedCornerShape(percent = 50),
-                colors = ButtonDefaults.buttonColors(MaterialTheme.colors.secondary)
-            ) {
-
-                Text(
-                    text = stringResource(id = R.string.welcome_create_account),
-                    textAlign = TextAlign.Center,
-                    style = MaterialTheme.typography.button,
-                    color = MaterialTheme.colors.onSecondary
-                )
-            }
-
-            var state =
-
+            BloomButton(
+                text = stringResource(id = R.string.welcome_create_account),
+                onClick = {},
+                modifier = Modifier.padding(horizontal = 16.dp)
+            )
 
             TextButton(
                 onClick = { navController.navigate("login")  },
