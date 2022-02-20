@@ -22,8 +22,6 @@ private val LightColorPalette = lightColors(
     primary = Pink100,
     primaryVariant = Purple700,
     secondary = Pink900,
-
-     //Other default colors to override
     background = White,
     surface = White850,
     onPrimary = Gray,
@@ -45,6 +43,6 @@ fun BloomAppTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composab
         colors = colors,
         typography = Typography,
         shapes = Shapes,
-        content = content
+        content = content,
     )
 }

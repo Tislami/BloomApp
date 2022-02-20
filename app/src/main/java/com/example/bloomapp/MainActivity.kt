@@ -10,14 +10,18 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.view.WindowCompat
+import com.example.bloomapp.screen.welcome.WelcomeScreen
 import com.example.bloomapp.ui.theme.BloomAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window,false)
+
         setContent {
             BloomAppTheme {
-
+                WelcomeScreen()
             }
         }
     }
