@@ -18,6 +18,20 @@
     <string name="password_desc">Password (8+ characters)</string>
     <string name="password">Password</string>
 
+    <string name="search">Search</string>
+    <string name="home_title1">Browse themes</string>
+    <string name="home_title2">Design your home garden</string>
+
+
+    <string name="login_screen">login</string>
+    <string name="welcome_screen">welcome</string>
+    <string name="home_screen">home</string>
+    <string name="favorites_screen">favorites</string>
+    <string name="profile_screen">profile</string>
+    <string name="cart_screen">cart</string>
+
+
+
 
 
 </resources>

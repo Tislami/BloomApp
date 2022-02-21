@@ -20,6 +20,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.bloomapp.R
 import com.example.bloomapp.components.BloomButton
+import com.example.bloomapp.components.BloomOutlinedTextField
 
 @Composable
 fun LoginScreen(
@@ -49,7 +50,7 @@ fun LoginScreen(
             Spacer(modifier = Modifier.height(16.dp))
 
 
-            LoginOutlinedTextField(
+            BloomOutlinedTextField(
                 value = emailAddress,
                 onValueChange = loginViewModel::onEmailAddressChange,
                 label = stringResource(id = R.string.email_address),
@@ -58,14 +59,14 @@ fun LoginScreen(
             
             Spacer(modifier = Modifier.height(8.dp))
 
-            LoginOutlinedTextField(
+            BloomOutlinedTextField(
                 value = password,
                 onValueChange = loginViewModel::onPasswordChange,
                 label = stringResource(id = R.string.password_desc),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
                 visualTransformation = VisualTransformation.None
             )
-            
+
             Text(
                 text = stringResource(id = R.string.privacy_policy),
                 style = MaterialTheme.typography.body2,
@@ -80,43 +81,4 @@ fun LoginScreen(
             )
         }
     }
-}
-
-
-@Composable
-fun LoginOutlinedTextField(
-    value: String,
-    onValueChange: (String) -> Unit,
-    label: String?= null,
-    visualTransformation: VisualTransformation = VisualTransformation.None,
-    keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
-    keyboardActions: KeyboardActions = KeyboardActions.Default,
-    placeholder: String="",
-
-){
-    OutlinedTextField(
-        value = value,
-        onValueChange = onValueChange,
-        modifier = Modifier.fillMaxWidth(),
-        textStyle = MaterialTheme.typography.body1,
-        visualTransformation = visualTransformation,
-        keyboardOptions = keyboardOptions,
-        keyboardActions = keyboardActions,
-        singleLine = true,
-        maxLines = 1,
-        label = { if(label!=null)InsideText(text = label) },
-        placeholder = { InsideText(text = placeholder)},
-        colors = TextFieldDefaults.outlinedTextFieldColors(
-            focusedBorderColor = Color.Gray,
-            cursorColor = Color.Gray))
-}
-
-@Composable
-fun InsideText(
-    text: String
-){
-    Text(
-        text = text,
-        style = MaterialTheme.typography.body1,
-        color = MaterialTheme.colors.onBackground)
 }
